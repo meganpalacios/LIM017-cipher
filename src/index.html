@@ -6,9 +6,49 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="root">
-      <h1>Hello world!</h1>
+    <div id="home" style="display: block">
+      <h1>Web del espía</h1>
+      <h3>An O.W.C.A powered website</h3>
+      <p>Agente:</p>
+      <input type="text" id="inicial" placeholder="Tu inicial" /><br><br>
+      <button type="button" id="start">Empezar</button><br>
     </div>
+    <div id="menu" style="display: none">
+      <h2 id="welcome"></h2><br>
+      <iframe src="https://giphy.com/embed/pmI5KxEftO608" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br>
+      <button type="button" id="codificar">Codificar</button>
+      <button type="button" id="decodificar">Decodificar</button>
+    </div>
+    <div id="code_page" style="display: none">
+      <h2>Ingresa aquí tu mensaje secreto para ser codificado</h2>
+      <p>Escoge un número secreto: </p>
+      <input type="number" id="offsetNC" placeholder="Ej: 13" /><br>
+      <button id="sendOffsetND">Confirmar</button>
+      <main>
+        <input type="text" />
+        <button id="callCodeFn"></button>
+      </main>
+      <figure>
+        <input type="text" />
+        <button id="copyCodedMsg"></button>
+      </figure>
+    </div>
+
+    <div id="decode_page" style="display: none">
+      <h2>Ingresa aquí el mensaje que quieres decodificar</h2>
+      <p>Escribe el número secreto: </p>
+      <input type="number" id="offsetND" placeholder="Ej: 13" /><br>
+      <button id="sendOffsetND">Confirmar</button>
+      <main>
+        <input type="text" />
+        <button id="callDecodeFn"></button>
+      </main>
+      <figure>
+        <input type="text" />
+        <button id="copyDecodedMsg"></button>
+      </figure>
+    </div>
+
     <script src="index.js" type="module"></script>
   </body>
 </html>
