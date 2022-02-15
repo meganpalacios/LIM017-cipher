@@ -1,53 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <title>Caesar Cipher</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <div id="home" style="display: block">
+    <section id="home">
       <h1>Web del espía</h1>
       <h3>An O.W.C.A powered website</h3>
-      <p>Agente:</p>
-      <input type="text" id="inicial" placeholder="Tu inicial" /><br><br>
+      <label for="initial">Agente:</label>
+      <input type="text" id="initial" placeholder="Tu inicial" maxlength="1" /><br><br>
       <button type="button" id="start">Empezar</button><br>
-    </div>
-    <div id="menu" style="display: none">
+    </section>
+    
+    <section id="menu">
       <h2 id="welcome"></h2><br>
-      <iframe src="https://giphy.com/embed/pmI5KxEftO608" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><br>
-      <button type="button" id="codificar">Codificar</button>
-      <button type="button" id="decodificar">Decodificar</button>
-    </div>
-    <div id="code_page" style="display: none">
+      <iframe src="https://giphy.com/embed/pmI5KxEftO608" width="480" height="269" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/pmI5KxEftO608">via GIPHY</a></p>
+      <button type="button" id="goToCode">Codificar</button>
+      <button type="button" id="goToDecode">Decodificar</button>
+    </section>
+
+    <section id="code_page">
       <h2>Ingresa aquí tu mensaje secreto para ser codificado</h2>
       <p>Escoge un número secreto: </p>
-      <input type="number" id="offsetNC" placeholder="Ej: 13" /><br>
-      <button id="sendOffsetND">Confirmar</button>
-      <main>
-        <input type="text" />
-        <button id="callCodeFn"></button>
-      </main>
-      <figure>
-        <input type="text" />
-        <button id="copyCodedMsg"></button>
-      </figure>
-    </div>
+      <input type="number" id="offsetC" placeholder="Ej: 13" /><br><br>
+      <div class="sidebyside">
+        <input type="text" id="textToCode" /><br><br>
+        <button id="callCodeFn">Codificar mensaje</button>
+      </div>
+      <div class="sidebyside">
+        <p id="codedMsg"></p>
+        <button id="copyCodedMsg">Copiar</button>
+      </div>
+      <br><br><button name="backToMenu">Volver al menú</button>
+      <button>Codificar otro mensaje</button>
+    </section>
 
-    <div id="decode_page" style="display: none">
+    <div id="decode_page">
       <h2>Ingresa aquí el mensaje que quieres decodificar</h2>
       <p>Escribe el número secreto: </p>
-      <input type="number" id="offsetND" placeholder="Ej: 13" /><br>
-      <button id="sendOffsetND">Confirmar</button>
-      <main>
-        <input type="text" />
-        <button id="callDecodeFn"></button>
-      </main>
-      <figure>
-        <input type="text" />
-        <button id="copyDecodedMsg"></button>
-      </figure>
+      <input type="number" id="offsetD" placeholder="Ej: 13" /><br><br>
+      <div class="sidebyside">
+        <input type="text" id="textToDecode" /><br><br>
+        <button id="callDecodeFn">Decodificar mensaje</button>
+      </div>
+      <div class="sidebyside">
+        <p id="decodedMsg"></p>
+        <button id="copyDecodedMsg">Copiar</button>
+      </div>
+      <br><br><button name="backToMenu">Volver al menú</button>
+      <button>Decodificar otro mensaje</button>
     </div>
+
+    <footer>
+      <div></div>
+    </footer>
 
     <script src="index.js" type="module"></script>
   </body>
