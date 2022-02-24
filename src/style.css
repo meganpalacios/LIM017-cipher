@@ -1,8 +1,22 @@
-#home {
+body {
     text-align: center;
     font-family: monospace;
     margin: 120px;
 }
 h1 {
     font-size: xx-large;
+}
+#home {
+    display: block;
+}
+#menu, #code_page, #decode_page {
+    display: none;
+}
+.sidebyside {
+    display: inline-block;
+}
+body {
+    background-image: url("./Perry_bg_v2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
