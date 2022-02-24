@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title>Caesar Cipher</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="myicon.ico">
+  </head>
+  <body>
+    <header>
+      <img class="logo" src="Disney.png" alt="Disney logo">
+      <nav>
+        <ul class="nav_list">
+          <li><a href="https://www.disneyplus.com/es-pe" target="_BLANK">Ir a Disney +</a></li>
+          <li><a href="https://phineasyferb.fandom.com/es/wiki/Inicio" target="_BLANK">Phineas y Ferb Wiki</a></li>
+          <li><a href="https://www.youtube.com/watch?v=renytjfLPkY" target="_BLANK">Escuchar O.W.C.A. (Y.M.C.A. remix)</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home">
+      <h1>Web del espía</h1>
+      <h2>An O.W.C.A powered website</h2>
+      <label for="initial">Agente:</label>
+      <input type="text" id="initial" placeholder="Tu inicial" maxlength="1" /><br><br>
+      <button type="button" class="button" id="start">Empezar</button><br>
+    </section>
+    
+    <section id="menu">
+      <h2 id="welcome"></h2><br>
+      <iframe src="https://giphy.com/embed/pmI5KxEftO608" width="480" height="269" frameborder="0" class="giphy-embed" allowfullscreen></iframe><p><a href="https://giphy.com/gifs/pmI5KxEftO608">via GIPHY</a></p>
+      <button type="button" class="button" id="goToEncode">Codificar</button>
+      <button type="button" class="button" id="goToDecode">Decodificar</button>
+    </section>
+
+    <section id="encode_page">
+      <h2>Ingresa aquí tu mensaje secreto para ser codificado</h2>
+      <p>Escoge un número secreto: </p>
+      <input type="number" id="offsetC" placeholder="Ej: 13" /><br><br>
+      <div class="sidebyside">
+        <input type="text" id="textToEncode" placeholder="Escribe aquí tu texto"/><br><br>
+        <button id="callEncodeFn" class="button">Codificar mensaje</button>
+      </div>
+      <div class="sidebyside">
+        <textarea readonly id="encodedMsg" placeholder="Aquí aparecerá tu texto codificado"></textarea>
+      </div>
+      <br><br><button id="backToMenu1" class="button">Volver al menú</button>
+    </section>
+
+    <div id="decode_page">
+      <h2>Ingresa aquí el mensaje que quieres decodificar</h2>
+      <p>Escribe el número secreto: </p>
+      <input type="number" id="offsetD" placeholder="Ej: 13" /><br><br>
+      <div class="sidebyside">
+        <input type="text" id="textToDecode" placeholder="Escribe aquí tu texto"/><br><br>
+        <button id="callDecodeFn" class="button">Decodificar mensaje</button>
+      </div>
+      <div class="sidebyside">
+        <textarea readonly id="decodedMsg" placeholder="Aquí aparecerá tu texto codificado"></textarea>
+      </div>
+      <br><br><button id="backToMenu2" class="button">Volver al menú</button>
+    </div>
+
+    <footer class="myFooter">
+      <p>&copy; 2022 Megan Palacios, Laboratoria</p>
+    </footer>
+
+    <script src="index.js" type="module"></script>
+  </body>
+</html>
