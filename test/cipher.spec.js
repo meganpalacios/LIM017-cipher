@@ -29,6 +29,9 @@ describe('cipher', () => {
       expect(cipher.encode(33, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')).toBe('HIJKLMNOPQRSTUVWXYZABCDEFG');
     });
 
+    it('should return "Ñ" for "Ñ" with offset 33', () => {
+      expect(cipher.encode(33, 'Ñ')).toBe('Ñ');
+    });
     // Hacker edition
     //
     // [Español]
