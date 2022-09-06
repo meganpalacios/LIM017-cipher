@@ -5,9 +5,7 @@ const start = document.getElementById('start');
 start.addEventListener('click', () => {
     let initialV = document.getElementById('initial').value;
     initialV = initialV.toUpperCase();
-    console.log(initialV);
     let asciiValue = initialV.charCodeAt(0);
-    console.log(asciiValue);
     let isLetter;
     if (asciiValue > 64 && asciiValue < 91) {
         isLetter = true;
@@ -19,17 +17,16 @@ start.addEventListener('click', () => {
         document.getElementById('home').style.display = 'none';
         document.getElementById('menu').style.display = 'block';
         agente = 'Agente ' + initialV + '.';
-        console.log('Hola, ' + agente);
-        document.getElementById('welcome').innerText = ('Bienvenidx, ' + agente + '\nAquí en la web del espía podrás codificar mensajes para tus aliados y decodificar los de ellos.\nSuerte en tu próxima misión')
+        document.getElementById('welcome').innerText = ('Bienvenidx, ' + agente + '\nSuerte en tu próxima misión')
     } else if (isLetter == false || initialV.length === 0) {
         alert('Ingreso inválido. Inténtalo de nuevo');
     }
 })
 
-const goToCode = document.getElementById('goToCode');
-goToCode.addEventListener('click', () => {
+const goToEncode = document.getElementById('goToEncode');
+goToEncode.addEventListener('click', () => {
     document.getElementById('menu').style.display = 'none';
-    document.getElementById('code_page').style.display = 'inline';
+    document.getElementById('encode_page').style.display = 'inline';
 })
 
 const goToDecode = document.getElementById('goToDecode');
@@ -38,21 +35,50 @@ goToDecode.addEventListener('click', () => {
     document.getElementById('decode_page').style.display = 'inline';
 })
 
-const callCodeFn = document.getElementById('callCodeFn');
-callCodeFn.addEventListener('click', () => {
-    let offsetPin = document.getElementById('offsetC').value;
-    let textToCodeV = document.getElementById('textToCode').value;
-    textToCodeV = textToCodeV.toUpperCase();
-    console.log(textToCodeV);
-    cipher.code(offsetPin, textToCodeV);
+let textToEncode = document.getElementById('textToEncode');
+textToEncode.addEventListener('keyup', () =>{
+    let textToEncodeV = textToEncode.value;
+    textToEncodeV = textToEncodeV.toUpperCase();
+    textToEncode.value = textToEncodeV;
+})
+
+let textToDecode = document.getElementById('textToDecode');
+textToDecode.addEventListener('keyup', () =>{
+    let textToDecodeV = textToDecode.value;
+    textToDecodeV = textToDecodeV.toUpperCase();
+    textToDecode.value = textToDecodeV;
+})
+
+const callEncodeFn = document.getElementById('callEncodeFn');
+callEncodeFn.addEventListener('click', () => {
+    let offsetE = document.getElementById('offsetC').value;
+    offsetE = parseInt(offsetE);
+    let textToEncodeV = document.getElementById('textToEncode').value;
+    console.log(textToEncodeV);
+    let encodeReturn = cipher.encode(offsetE, textToEncodeV);
+    let encodedMsg = document.getElementById('encodedMsg');
+    encodedMsg.innerText = encodeReturn;
 })
 
 const callDecodeFn = document.getElementById('callDecodeFn');
 callDecodeFn.addEventListener('click', () => {
-    let offsetPin = document.getElementById('offsetD').value;
+    let offsetD = document.getElementById('offsetD').value;
+    offsetD = parseInt(offsetD);
     let textToDecodeV = document.getElementById('textToDecode').value;
-    textToDecodeV = textToDecodeV.toUpperCase();
     console.log(textToDecodeV);
-    cipher.decode(offsetPin, textToDecodeV);
+    let decodeReturn = cipher.decode(offsetD, textToDecodeV);
+    let decodedMsg = document.getElementById('decodedMsg');
+    decodedMsg.innerText = decodeReturn;
 })
+
+function showMenu() {
+    document.getElementById('encode_page').style.display = 'none';
+    document.getElementById('decode_page').style.display = 'none';
+    document.getElementById('menu').style.display = 'block';
+}
+const backToMenu1 = document.getElementById('backToMenu1')
+backToMenu1.addEventListener('click', showMenu)
+const backToMenu2 = document.getElementById('backToMenu2')
+backToMenu2.addEventListener('click', showMenu)
+
 console.log(cipher);

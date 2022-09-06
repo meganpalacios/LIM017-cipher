@@ -1,22 +1,60 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
 body {
     text-align: center;
     font-family: monospace;
-    margin: 120px;
+    margin: 10px;
+    background-image: url("./Perry_bg_v2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+button {
+    font-family: monospace;
+    background-color: #f4990d;
+    color: black;
+    font-size: large;
+    border-radius: 8px;
+}
+.logo {
+    height: 46px;
+}
+.nav_list {
+    list-style: none;
+}
+.nav_list li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+.nav_list li a {
+    color: #207a7a;
 }
 h1 {
-    font-size: xx-large;
+    font-size: 40px;
 }
 #home {
     display: block;
+    margin: 180px;
 }
-#menu, #code_page, #decode_page {
+#menu, #encode_page, #decode_page {
     display: none;
+}
+#menu {
+    margin: 40px;
+}
+#encode_page, #decode_page {
+    margin: 70px;
 }
 .sidebyside {
     display: inline-block;
 }
-body {
-    background-image: url("./Perry_bg_v2.png");
-    background-size: cover;
-    background-repeat: no-repeat;
+.myFooter {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
 }
